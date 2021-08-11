@@ -1,6 +1,6 @@
-# Introduction
+# Weight Converter
 
-Weight Converter is a python module for converting weight units.
+A python module for converting weight units.
 
 ## Install
 To install Weight Converter, run the following command:
