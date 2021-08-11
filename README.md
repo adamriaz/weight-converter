@@ -1,4 +1,5 @@
 # Weight Converter
+[![codecov](https://codecov.io/gh/adamriaz/weight-converter/branch/main/graph/badge.svg?token=hcHbzXWhUJ)](https://codecov.io/gh/adamriaz/weight-converter)
 
 A python module for converting weight units.
 
