@@ -16,5 +16,3 @@ from weight_converter.convert import Kilograms
 kilograms = Kilograms(value=1)
 lbs = kilograms.to_pounds()
 ```
-
-

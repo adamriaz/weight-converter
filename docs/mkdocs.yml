@@ -1,0 +1,18 @@
+site_name: Weight Converter
+site_url: https://github.com/adamriaz/weight-converter
+theme: readthedocs
+nav:
+    - Introduction: 'index.md'
+    - Classes:
+        - 'Metric Tonnes': 'metric-tonnes.md'
+        - 'Kilograms': 'kilograms.md'
+        - 'Grams': 'grams.md'
+        - 'Milligrams': 'milligrams.md'
+        - 'Micrograms': 'micrograms.md'
+        - 'Imperial Tons': 'imperial-tons.md'
+        - 'US Tons': 'us-tons.md'
+        - 'Stones': 'stones.md'
+        - 'Pounds': 'pounds.md'
+        - 'Ounces': 'ounces.md'
+    - About:
+        - 'License': 'license.md'
