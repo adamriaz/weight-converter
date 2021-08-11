@@ -1,5 +1,4 @@
 site_name: Weight Converter
-site_url: https://github.com/adamriaz/weight-converter
 theme: readthedocs
 nav:
     - Introduction: 'index.md'
