@@ -1,7 +1,7 @@
 class IUnit:
 
-    def to_tonnes(self) -> float:
-        """ Converts value to tonnes """
+    def to_metric_tonnes(self) -> float:
+        """ Converts value to metric tonnes """
         pass
 
     def to_kilograms(self) -> float:
@@ -21,7 +21,7 @@ class IUnit:
         pass
 
     def to_imperial_tons(self) -> float:
-        """ Converts value to imperial tons """
+        """ Converts value to imperial or UK tons """
         pass
 
     def to_us_tons(self) -> float:

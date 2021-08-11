@@ -2,37 +2,41 @@ from weight_converter.interfaces import IUnit
 from weight_converter.utils import divide_by_zero_check
 
 
-class Tonnes(IUnit):
+class MetricTonnes(IUnit):
+
     def __init__(self, value: float = 1.0):
         self.value = value
 
-    def to_kilograms(self):
+    def to_metric_tonnes(self) -> float:
+        return self.value.__float__()
+
+    def to_kilograms(self) -> float:
         return self.value * 1e3
 
-    def to_grams(self):
+    def to_grams(self) -> float:
         return self.value * 1e6
 
-    def to_milligrams(self):
+    def to_milligrams(self) -> float:
         return self.value * 1e9
 
-    def to_micrograms(self):
+    def to_micrograms(self) -> float:
         return self.value * 1e12
 
     @divide_by_zero_check
-    def to_imperial_tons(self):
-        return self.value / 1.016
+    def to_imperial_tons(self) -> float:
+        return self.value / 1.0160469088
 
-    def to_us_tons(self):
-        return self.value * 1.102
+    def to_us_tons(self) -> float:
+        return self.value * 1.1023113109244
 
-    def to_stones(self):
-        return self.value * 157.473
+    def to_stones(self) -> float:
+        return self.value * 157.47304441777
 
-    def to_pounds(self):
-        return self.value * 2204.62
+    def to_pounds(self) -> float:
+        return self.value * 2204.6226218488
 
-    def to_ounces(self):
-        return self.value * 35274
+    def to_ounces(self) -> float:
+        return self.value * 35273.96194958
 
 
 class Kilograms(IUnit):
@@ -41,35 +45,38 @@ class Kilograms(IUnit):
         self.value = value
 
     @divide_by_zero_check
-    def to_tonnes(self):
+    def to_metric_tonnes(self) -> float:
         return self.value / 1e3
 
-    def to_grams(self):
+    def to_grams(self) -> float:
         return self.value * 1e3
 
-    def to_milligrams(self):
+    def to_kilograms(self) -> float:
+        return self.value.__float__()
+
+    def to_milligrams(self) -> float:
         return self.value * 1e6
 
-    def to_micrograms(self):
+    def to_micrograms(self) -> float:
         return self.value * 1e9
 
     @divide_by_zero_check
-    def to_imperial_tons(self):
-        return self.value / 1016
+    def to_imperial_tons(self) -> float:
+        return self.value / 1016.0469088
 
     @divide_by_zero_check
-    def to_us_tons(self):
-        return self.value / 907
+    def to_us_tons(self) -> float:
+        return self.value / 907.18474
 
     @divide_by_zero_check
-    def to_stones(self):
-        return self.value / 6.35
+    def to_stones(self) -> float:
+        return self.value / 6.35029318
 
-    def to_pounds(self):
-        return self.value * 2.205
+    def to_pounds(self) -> float:
+        return self.value * 2.2046226218488
 
-    def to_ounces(self):
-        return self.value * 35.274
+    def to_ounces(self) -> float:
+        return self.value * 35.27396194958
 
 
 class Grams(IUnit):
@@ -78,34 +85,41 @@ class Grams(IUnit):
         self.value = value
 
     @divide_by_zero_check
-    def to_tonnes(self):
+    def to_metric_tonnes(self) -> float:
         return self.value / 1e6
 
     @divide_by_zero_check
-    def to_kilograms(self):
+    def to_kilograms(self) -> float:
         return self.value / 1e3
 
-    def to_milligrams(self):
+    def to_grams(self) -> float:
+        return self.value.__float__()
+
+    def to_milligrams(self) -> float:
         return self.value * 1e3
 
-    def to_micrograms(self):
+    def to_micrograms(self) -> float:
         return self.value * 1e6
 
     @divide_by_zero_check
-    def to_imperial_tons(self):
-        return self.value / 1.016e6
+    def to_imperial_tons(self) -> float:
+        return self.value / 1016046.9088
 
-    def to_us_tons(self):
-        return self.value * 907185
+    @divide_by_zero_check
+    def to_us_tons(self) -> float:
+        return self.value / 907184.74
 
-    def to_stones(self):
-        return self.value * 6350
+    @divide_by_zero_check
+    def to_stones(self) -> float:
+        return self.value / 6350.29318
 
-    def to_pounds(self):
-        return self.value * 454
+    @divide_by_zero_check
+    def to_pounds(self) -> float:
+        return self.value / 453.59237
 
-    def to_ounces(self):
-        return self.value * 28.35
+    @divide_by_zero_check
+    def to_ounces(self) -> float:
+        return self.value / 28.349523125
 
 
 class Milligrams(IUnit):
@@ -114,39 +128,42 @@ class Milligrams(IUnit):
         self.value = value
 
     @divide_by_zero_check
-    def to_tonnes(self):
+    def to_metric_tonnes(self) -> float:
         return self.value / 1e9
 
     @divide_by_zero_check
-    def to_kilograms(self):
-        return self.value / 1e9
+    def to_kilograms(self) -> float:
+        return self.value / 1e6
 
     @divide_by_zero_check
-    def to_grams(self):
+    def to_grams(self) -> float:
         return self.value / 1e3
 
-    def to_micrograms(self):
+    def to_milligrams(self) -> float:
+        return self.value.__float__()
+
+    def to_micrograms(self) -> float:
         return self.value * 1e3
 
     @divide_by_zero_check
-    def to_imperial_tons(self):
-        return self.value / 1.016e6
+    def to_imperial_tons(self) -> float:
+        return self.value / 1016046908.8
 
     @divide_by_zero_check
-    def to_us_tons(self):
-        return self.value / 9.072e8
+    def to_us_tons(self) -> float:
+        return self.value / 907184740
 
     @divide_by_zero_check
-    def to_stones(self):
-        return self.value / 6.35e6
+    def to_stones(self) -> float:
+        return self.value / 6350293.1
 
     @divide_by_zero_check
-    def to_pounds(self):
-        return self.value / 453592
+    def to_pounds(self) -> float:
+        return self.value / 453592.37
 
     @divide_by_zero_check
-    def to_ounces(self):
-        return self.value / 28350
+    def to_ounces(self) -> float:
+        return self.value / 28349.523125
 
 
 class Micrograms(IUnit):
@@ -155,40 +172,43 @@ class Micrograms(IUnit):
         self.value = value
 
     @divide_by_zero_check
-    def to_tonnes(self):
+    def to_metric_tonnes(self) -> float:
         return self.value / 1e12
 
     @divide_by_zero_check
-    def to_kilograms(self):
-        return self.value / 1e12
+    def to_kilograms(self) -> float:
+        return self.value / 1e9
 
     @divide_by_zero_check
-    def to_grams(self):
+    def to_grams(self) -> float:
         return self.value / 1e6
 
     @divide_by_zero_check
-    def to_milligrams(self):
+    def to_milligrams(self) -> float:
         return self.value / 1e3
 
-    @divide_by_zero_check
-    def to_imperial_tons(self):
-        return self.value / 1.016e12
+    def to_micrograms(self) -> float:
+        return self.value.__float__()
 
     @divide_by_zero_check
-    def to_us_tons(self):
-        return self.value / 9.072e11
+    def to_imperial_tons(self) -> float:
+        return self.value / 1016046908800
 
     @divide_by_zero_check
-    def to_stones(self):
-        return self.value / 6.35e9
+    def to_us_tons(self) -> float:
+        return self.value / 907184740000
+
+    @divide_by_zero_check
+    def to_stones(self) -> float:
+        return self.value / 6350293180
 
     @divide_by_zero_check
     def to_pounds(self):
-        return self.value / 4.536e8
+        return self.value / 453592370
 
     @divide_by_zero_check
     def to_ounces(self):
-        return self.value / 2.835e+7
+        return self.value / 28349523.125
 
 
 class ImperialTons(IUnit):
@@ -196,7 +216,7 @@ class ImperialTons(IUnit):
     def __init__(self, value: float = 1.0):
         self.value = value
 
-    def to_tonnes(self):
+    def to_metric_tonnes(self):
         return self.value * 1.016
 
     def to_kilograms(self):
@@ -230,7 +250,7 @@ class USTons(IUnit):
         self.value = value
 
     @divide_by_zero_check
-    def to_tonnes(self):
+    def to_metric_tonnes(self):
         return self.value / 1.102
 
     def to_kilograms(self):
@@ -265,7 +285,7 @@ class Stones(IUnit):
         self.value = value
 
     @divide_by_zero_check
-    def to_tonnes(self):
+    def to_metric_tonnes(self):
         return self.value / 157
 
     def to_kilograms(self):
@@ -301,7 +321,7 @@ class Pounds(IUnit):
         self.value = value
 
     @divide_by_zero_check
-    def to_tonnes(self):
+    def to_metric_tonnes(self):
         return self.value / 2205
 
     @divide_by_zero_check
@@ -339,7 +359,7 @@ class Ounces(IUnit):
         self.value = value
 
     @divide_by_zero_check
-    def to_tonnes(self):
+    def to_metric_tonnes(self):
         return self.value / 16
 
     @divide_by_zero_check
